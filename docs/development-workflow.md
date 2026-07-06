@@ -88,3 +88,6 @@ Issueは、次の条件を満たしてから `Done` に移す。
 
 PRには、関連Issue、関連Spec、確認したこと、未確認のことを書く。
 API仕様、Kubernetes manifest、GCP設定を変えるPRでは、該当ドキュメントも同じPRで更新する。
+
+ブランチ戦略の詳細は `docs/branch-strategy.md` に置く。
+レビュー観点の詳細は `docs/review-guidelines.md` に置く。
