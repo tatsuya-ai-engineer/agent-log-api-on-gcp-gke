@@ -105,6 +105,8 @@ curl http://localhost:8000/logs
 
 - [SPEC.md](./SPEC.md): 開発仕様。
 - [docs/development-workflow.md](./docs/development-workflow.md): SDD、Epic、Milestone、Kanban、PR運用。
+- [docs/branch-strategy.md](./docs/branch-strategy.md): ブランチ戦略、マージ方式、保護ルール。
+- [docs/review-guidelines.md](./docs/review-guidelines.md): マージレビュー観点。
 - [docs/roadmap.md](./docs/roadmap.md): MilestoneとEpicの現在地。
 - [docs/github-setup.md](./docs/github-setup.md): GitHub上に作るMilestone、Project、Label、初期Issue。
 - [specs/v0.1.0-local-api.md](./specs/v0.1.0-local-api.md): ローカルAPI完成までの詳細Spec。
