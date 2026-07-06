@@ -26,6 +26,9 @@
 実装中に仕様が変わった場合、コードだけを変えずにSpecも更新する。
 その変更が技術選定や責務分割に関わる場合はADRを追加する。
 
+新しい開発セッションでは、最初に `docs/session-handoff.md` を読む。
+Milestone、Epic、次のIssue、サービス境界、必読ファイルが変わった場合は、作業の最後に `docs/session-handoff.md` を更新する。
+
 ## Issueの粒度
 
 Issueは、1日から2日で完了できる大きさにする。
@@ -80,6 +83,7 @@ Issueは、次の条件を満たしてから `Done` に移す。
 - 完了条件を満たしている。
 - 必要なテストまたは動作確認が記録されている。
 - Spec、README、Runbook、ADRのうち、影響を受けるドキュメントが更新されている。
+- 必要に応じて `docs/session-handoff.md` が更新されている。
 
 ## BranchとPR
 
