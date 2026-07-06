@@ -24,6 +24,7 @@
 - [ ] Kubernetes manifestを確認した
 - [ ] SecretをGitに含めていない
 - [ ] READMEまたはSpecを更新した
+- [ ] 必要に応じて `docs/session-handoff.md` を更新した
 - [ ] レビュー観点に沿ってセルフレビューした
 
 ## レビュー観点
