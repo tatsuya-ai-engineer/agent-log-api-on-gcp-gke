@@ -11,7 +11,7 @@
 | Remote | `origin` 設定済み |
 | Product Spec | `SPEC.md` 配置済み |
 | README | 初版作成済み |
-| App | 未実装 |
+| App | FastAPI雛形と `GET /health` 実装済み |
 | Docker | 未実装 |
 | Kubernetes | 未実装 |
 | GCP | 未実装 |
@@ -42,7 +42,6 @@
 
 `v0.1.0` では、次のIssueを作る。
 
-- DEV-003 FastAPI雛形作成。
 - DEV-004 `POST /logs` 実装。
 - DEV-005 `GET /logs` 実装。
 - TEST-001 API基本テスト追加。
