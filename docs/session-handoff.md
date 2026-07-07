@@ -9,7 +9,7 @@
 |---|---|
 | Repository | GitHub反映済み |
 | Local branch | `main` が `origin/main` を追跡 |
-| App | 未実装 |
+| App | FastAPI雛形と `GET /health` 実装済み |
 | Docker | 未実装 |
 | Kubernetes | 未実装 |
 | GCP | 未実装 |
@@ -34,15 +34,14 @@
 ## 次の作業
 
 次の開発は `v0.1.0 Local API` から始める。
-最初に扱うIssue候補は次の通りである。
+次に扱うIssue候補は次の通りである。
 
-- DEV-003 FastAPI雛形作成。
 - DEV-004 `POST /logs` 実装。
 - DEV-005 `GET /logs` 実装。
 - TEST-001 API基本テスト追加。
 - DOC-001 READMEにローカルAPI起動手順を書く。
 
-最初の実装では、`services/agent-log-api/` 配下にFastAPIアプリを置く。
+`services/agent-log-api/` 配下にFastAPIアプリを置いている。
 `GET /health`、`POST /logs`、`GET /logs` の受け入れ条件は `specs/v0.1.0-local-api.md` に従う。
 
 ## 開発の進め方
