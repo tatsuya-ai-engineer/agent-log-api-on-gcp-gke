@@ -22,12 +22,13 @@
 
 1. `README.md`
 2. `docs/session-handoff.md`
-3. `docs/roadmap.md`
-4. `specs/v0.1.0-local-api.md`
-5. `services/agent-log-api/SPEC.md`
-6. `docs/development-workflow.md`
-7. `docs/branch-strategy.md`
-8. `docs/review-guidelines.md`
+3. `docs/implementation-index.md`
+4. `docs/roadmap.md`
+5. `specs/v0.1.0-local-api.md`
+6. `services/agent-log-api/SPEC.md`
+7. `docs/development-workflow.md`
+8. `docs/branch-strategy.md`
+9. `docs/review-guidelines.md`
 
 全体方針を確認する必要がある場合は、`SPEC.md` も読む。
 
@@ -47,6 +48,7 @@
 ## 開発の進め方
 
 作業はSpecから始める。
+リポジトリに変更を加える作業の前に、`docs/implementation-index.md` で作業タイプ別の参照先と作業前チェックを確認する。
 Issueまたは作業内容が曖昧な場合は、先にSpecかIssue案を更新する。
 Specを新規作成または更新した場合、または既存Specで作業範囲を確定する場合は、コード実装へ進む前にユーザー承認を得る。
 

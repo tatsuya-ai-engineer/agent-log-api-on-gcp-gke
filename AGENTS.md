@@ -1,6 +1,7 @@
 # Agent Instructions
 
 このリポジトリで作業するエージェントは、最初に `docs/session-handoff.md` を読む。
+実装、修正、テスト追加、インフラ変更、ドキュメント変更など、リポジトリに変更を加える作業の前に `docs/implementation-index.md` を確認する。
 次に、作業内容に応じて `README.md`、`docs/roadmap.md`、該当する `specs/`、`services/*/SPEC.md` を読む。
 
 実装はSpec Driven Developmentで進める。
