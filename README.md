@@ -105,6 +105,7 @@ curl http://localhost:8000/logs
 
 - [SPEC.md](./SPEC.md): 開発仕様。
 - [docs/session-handoff.md](./docs/session-handoff.md): 新しい開発セッションの入口と現在地。
+- [docs/implementation-index.md](./docs/implementation-index.md): 実装、修正、テスト追加、インフラ変更、ドキュメント変更の前に確認する目次。
 - [docs/development-workflow.md](./docs/development-workflow.md): SDD、Epic、Milestone、Kanban、PR運用。
 - [docs/branch-strategy.md](./docs/branch-strategy.md): ブランチ戦略、マージ方式、保護ルール。
 - [docs/review-guidelines.md](./docs/review-guidelines.md): マージレビュー観点。
@@ -121,6 +122,7 @@ curl http://localhost:8000/logs
 
 このリポジトリでは、Spec Driven Developmentを基本にします。
 実装前に該当Specへ目的、範囲、受け入れ条件を書き、IssueとPRをSpecに紐づけます。
+リポジトリに変更を加える作業の前に [docs/implementation-index.md](./docs/implementation-index.md) を確認します。
 
 新しい開発セッションでは、最初に [docs/session-handoff.md](./docs/session-handoff.md) を読みます。
 Milestone、Epic、次のIssue、サービス境界、必読ファイルが変わった場合は、このファイルを更新します。

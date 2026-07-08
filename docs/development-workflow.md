@@ -19,6 +19,8 @@
 
 ## Spec Driven Development
 
+実装、修正、テスト追加、インフラ変更、ドキュメント変更など、リポジトリに変更を加える作業の前に `docs/implementation-index.md` を確認する。
+
 実装前に、該当するSpecへ目的、範囲、受け入れ条件を書く。
 既存Specで表現できる変更なら、そのSpecを更新する。
 新しい機能単位なら `specs/` に小さなSpecを追加する。
