@@ -37,7 +37,6 @@
 次の開発は `v0.1.0 Local API` から始める。
 次に扱うIssue候補は次の通りである。
 
-- DEV-005 `GET /logs` 実装。
 - TEST-001 API基本テスト追加。
 - DOC-001 READMEにローカルAPI起動手順を書く。
 
