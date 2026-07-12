@@ -11,7 +11,7 @@
 | Remote | `origin` 設定済み |
 | Product Spec | `SPEC.md` 配置済み |
 | README | 初版作成済み |
-| App | FastAPI雛形と `GET /health` 実装済み |
+| App | `GET /health`、`POST /logs`、`GET /logs` 実装済み |
 | Docker | 未実装 |
 | Kubernetes | 未実装 |
 | GCP | 未実装 |
