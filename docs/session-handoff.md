@@ -10,6 +10,7 @@
 | Repository | GitHub反映済み |
 | Local branch | `main` が `origin/main` を追跡 |
 | App | `GET /health`、`POST /logs`、`GET /logs` 実装済み |
+| Tests | API基本テスト4件追加済み、PR #14レビュー待ち |
 | Docker | 未実装 |
 | Kubernetes | 未実装 |
 | GCP | 未実装 |
@@ -37,11 +38,15 @@
 次の開発は `v0.1.0 Local API` から始める。
 次に扱うIssue候補は次の通りである。
 
-- TEST-001 API基本テスト追加。
+- TEST-001 API基本テスト追加。PR #14をレビューしてマージする。
+- CI-001 APIテストをGitHub Actionsで自動実行。Issue #15から着手する。
 - DOC-001 READMEにローカルAPI起動手順を書く。
 
 `services/agent-log-api/` 配下にFastAPIアプリを置いている。
 `GET /health`、`POST /logs`、`GET /logs` の受け入れ条件は `specs/v0.1.0-local-api.md` に従う。
+
+次のセッションでは、最初にPR #14とIssue #15の状態を確認する。
+PR #14のマージ後、Issue #15について既存Specと開発運用文書への影響を確認し、作業範囲のユーザー承認を得てからCI実装へ進む。
 
 ## 開発の進め方
 
