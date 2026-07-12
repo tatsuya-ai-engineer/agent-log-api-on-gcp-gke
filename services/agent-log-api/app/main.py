@@ -40,3 +40,8 @@ def create_log(log: AgentLogCreate) -> AgentLog:
     logs.append(saved_log)
     print(json.dumps(model_to_dict(saved_log), ensure_ascii=False))
     return saved_log
+
+
+@app.get("/logs")
+def list_logs() -> list[AgentLog]:
+    return logs
