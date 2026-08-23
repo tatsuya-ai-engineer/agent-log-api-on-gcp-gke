@@ -1,24 +1,30 @@
+# 目的: PRとmainへの変更でAPIテストを自動実行し、回帰を早期に検知する。
 name: API tests
 
+# PRの作成・更新時と、PRをmergeしたmainへのpush時にこのWorkflowを起動する。
 on:
   pull_request:
   push:
     branches:
       - main
 
+# リポジトリ内容の読み取りだけを許可し、不要なGitHub権限を与えない。
 permissions:
   contents: read
 
 jobs:
   api-tests:
     name: API tests
+    # GitHubが管理する一時的なUbuntu実行環境でテストを実行する。
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
+        # テスト対象のソースコードを実行環境に取得する。
         uses: actions/checkout@v7
 
       - name: Set up Python
+        # APIとテストが使うPython 3.11を準備し、pipの依存関係をキャッシュする。
         uses: actions/setup-python@v7
         with:
           python-version: "3.11"
@@ -26,16 +32,19 @@ jobs:
           cache-dependency-path: services/agent-log-api/requirements-dev.txt
 
       - name: Install test dependencies
+        # pytestなど、テストの実行に必要な開発用依存関係を導入する。
         working-directory: services/agent-log-api
         run: python -m pip install --requirement requirements-dev.txt
 
       - name: Run API tests
+        # pytestがtests/test_*.pyを自動検出して実行し、結果をJUnit XMLに出力する。
         working-directory: services/agent-log-api
         env:
           PYTHONPATH: .
         run: python -m pytest --junitxml=test-results/junit.xml
 
       - name: Add test summary
+        # 成否に関係なく実行し、JUnit XMLから集計した件数をJob Summaryに表示する。
         if: ${{ always() }}
         working-directory: services/agent-log-api
         run: |
@@ -49,6 +58,7 @@ jobs:
           if not report_path.exists():
               print("JUnit XML was not generated. Check the test step output.")
           else:
+              # pytestが出力するtestsuite要素を読み、各テストスイートの件数を合算する。
               root = ElementTree.parse(report_path).getroot()
               suites = [root] if root.tag == "testsuite" else root.findall("testsuite")
               totals = {
@@ -62,6 +72,7 @@ jobs:
           PY
 
       - name: Upload JUnit XML
+        # 成否に関係なく結果ファイルをArtifactとして14日間保存し、後から確認できるようにする。
         if: ${{ always() }}
         uses: actions/upload-artifact@v7
         with:
