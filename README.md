@@ -127,6 +127,8 @@ curl http://localhost:8000/logs
 - [specs/v0.1.0-local-api.md](./specs/v0.1.0-local-api.md): ローカルAPI完成までの詳細Spec。
 - [services/README.md](./services/README.md): マイクロサービス境界。
 - [services/agent-log-api/SPEC.md](./services/agent-log-api/SPEC.md): `agent-log-api` のサービスSpec。
+- [docs/visualizations/knowledge-graph.html](./docs/visualizations/knowledge-graph.html): 仕様、実装、テスト、Issue、マイルストーンの関係図。
+- [docs/visualizations/microservice-relationships.html](./docs/visualizations/microservice-relationships.html): 現在のサービスと将来のサービス分離を示す相関図。
 - `docs/architecture.md`: アーキテクチャ説明予定。
 - `docs/runbook.md`: 運用手順予定。
 - `docs/security.md`: セキュリティ方針予定。
