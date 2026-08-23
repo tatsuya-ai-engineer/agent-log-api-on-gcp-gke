@@ -10,12 +10,12 @@
 | Repository | GitHub反映済み |
 | Local branch | `main` が `origin/main` を追跡 |
 | App | `GET /` のローカル確認用UI、`GET /health`、`POST /logs`、`GET /logs` 実装済み |
-| Tests | APIとUIの基本テスト5件追加済み、PR #14はmerge済み |
+| Tests | APIとUIの基本テスト5件追加済み。GitHub Actionsの`API tests`を`main`の必須チェックに設定済み |
 | Docker | 未実装 |
 | Kubernetes | 未実装 |
 | GCP | 未実装 |
-| Current milestone | `v0.1.0 Local API` |
-| Current epic | `EPIC-001 Local API MVP` |
+| Current milestone | `v0.2.0 Docker` |
+| Current epic | `EPIC-002 Containerization` |
 
 ## 最初に読むファイル
 
@@ -35,16 +35,14 @@
 
 ## 次の作業
 
-次の開発は `v0.1.0 Local API` から始める。
-次に扱うIssue候補は次の通りである。
-
-- CI-001 APIテストをGitHub Actionsで自動実行。Issue #15から着手する。
+`v0.1.0 Local API` と `EPIC-001 Local API MVP` は完了した。
+次の開発は `v0.2.0 Docker` の `EPIC-002 Containerization`（Issue #23）から始める。
+最初にDocker実行のSpecを作成し、ユーザー承認後に実装Issueへ分解する。
 
 `services/agent-log-api/` 配下にFastAPIアプリを置いている。
 `GET /`、`GET /health`、`POST /logs`、`GET /logs` の受け入れ条件は `specs/v0.1.0-local-api.md` に従う。
 
-次のセッションでは、最初にIssue #15の状態を確認する。
-CI-001については、既存Specと開発運用文書への影響を確認し、作業範囲のユーザー承認を得てからCI実装へ進む。
+次のセッションでは、最初にIssue #23の状態と`v0.2.0 Docker`のSpecを確認する。
 
 ## 開発の進め方
 

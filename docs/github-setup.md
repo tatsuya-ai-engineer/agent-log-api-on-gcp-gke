@@ -113,3 +113,16 @@ Body:
 | TEST-001 API基本テスト追加 | `type:test`, `priority:should`, `phase:1-mvp` | `v0.1.0 Local API` |
 | DOC-001 READMEにローカルAPI起動手順を書く | `type:docs`, `priority:should`, `phase:1-mvp` | `v0.1.0 Local API` |
 | UI-001 ローカル確認用ダッシュボード実装 | `type:feature`, `priority:must`, `phase:1-mvp` | `v0.1.0 Local API` |
+
+## EPIC-002
+
+Title:
+
+```text
+EPIC-002: Containerization
+```
+
+Epic #2は`v0.2.0 Docker`に紐づける。
+Dockerfile、`.dockerignore`、ローカルbuildとcontainer起動による`/health`確認、READMEの起動手順を範囲とする。
+Kubernetes、GCP、イメージ公開、API仕様変更は対象外とする。
+実装用の子Issueは、Docker実行のSpecをユーザー承認した後に分解して作成する。
