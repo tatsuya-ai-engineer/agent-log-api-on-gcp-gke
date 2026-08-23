@@ -31,7 +31,9 @@ jobs:
 
       - name: Run API tests
         working-directory: services/agent-log-api
-        run: pytest --junitxml=test-results/junit.xml
+        env:
+          PYTHONPATH: .
+        run: python -m pytest --junitxml=test-results/junit.xml
 
       - name: Add test summary
         if: ${{ always() }}
