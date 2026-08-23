@@ -80,6 +80,9 @@ GitHub上では、`main` に次の保護を設定する。
 Phase 1の初期だけは、repo初期化のために直接反映を許容した。
 以後の開発はPR経由に戻す。
 
+CI-001をmergeした後、GitHubの `Settings` → `Branches` で `main` の保護ルールを編集する。
+`Require status checks to pass before merging` を有効にし、成功済みのワークフローから `API tests` のCheckを必須に設定する。
+
 ## タグ
 
 Milestoneが完了したら、`v0.1.0` のようなタグを切る。

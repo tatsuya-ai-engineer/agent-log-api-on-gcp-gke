@@ -1,0 +1,6 @@
+# Python test outputs
+test-results/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
