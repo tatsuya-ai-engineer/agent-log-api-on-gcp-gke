@@ -39,7 +39,6 @@
 次に扱うIssue候補は次の通りである。
 
 - CI-001 APIテストをGitHub Actionsで自動実行。Issue #15から着手する。
-- DOC-001 READMEにローカルAPI起動手順を書く。
 
 `services/agent-log-api/` 配下にFastAPIアプリを置いている。
 `GET /`、`GET /health`、`POST /logs`、`GET /logs` の受け入れ条件は `specs/v0.1.0-local-api.md` に従う。
