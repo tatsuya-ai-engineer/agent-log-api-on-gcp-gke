@@ -20,7 +20,7 @@
 
 | Milestone | 目的 | 完了条件 |
 |---|---|---|
-| `v0.1.0` | ローカルAPI完成 | `/` の確認用UIと`/health`、`POST /logs`、`GET /logs` がローカルで動く |
+| `v0.1.0` | ローカルAPI完成 | `/` の確認用UIと`/health`、`POST /logs`、`GET /logs` がローカルで動き、GitHub ActionsでAPIテストが成功する |
 | `v0.2.0` | Docker化 | image buildとcontainer起動でAPIを確認できる |
 | `v0.3.0` | ローカルKubernetes対応 | Deployment、Service、port-forwardでAPIを確認できる |
 | `v0.4.0` | GKE Autopilot対応 | GKE上でAPIが動き、Cloud Loggingでログを確認できる |
