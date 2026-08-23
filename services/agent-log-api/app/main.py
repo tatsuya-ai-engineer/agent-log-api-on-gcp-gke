@@ -1,11 +1,16 @@
 import json
+from pathlib import Path
 from typing import Literal, Optional
 
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 
 app = FastAPI(title="Agent Log API")
+static_dir = Path(__file__).parent / "static"
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 
 class AgentLogCreate(BaseModel):
@@ -27,6 +32,11 @@ def model_to_dict(model: BaseModel) -> dict:
     if hasattr(model, "model_dump"):
         return model.model_dump()
     return model.dict()
+
+
+@app.get("/", include_in_schema=False)
+def dashboard() -> FileResponse:
+    return FileResponse(static_dir / "index.html")
 
 
 @app.get("/health")

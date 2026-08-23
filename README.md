@@ -13,6 +13,7 @@ AI Agentの操作ログを受け取る小さなAPIを作り、KubernetesとGoogl
 - `GET /health` でヘルスチェックを返す。
 - `POST /logs` でAgent操作ログを受け取る。
 - `GET /logs` で受信済みログを確認する。
+- `GET /` のローカル確認用ダッシュボードで状態と受信ログを確認する。
 - Dockerイメージとしてビルドできるようにする。
 - KubernetesのDeploymentとServiceで起動できるようにする。
 - ConfigMap、Secret、liveness probe、readiness probeを段階的に追加する。
@@ -66,15 +67,27 @@ Client / Agent
 └── .github/
 ```
 
-## 起動方法
+## ローカル起動とUI確認
 
-現時点では、リポジトリ初期化と仕様配置まで完了しています。
-アプリ実装後は、次のような手順で確認できる状態を目指します。
+Python 3.9以降を用意し、リポジトリのルートから次を実行する。
 
 ```sh
-cd app
-pip install -r requirements.txt
-uvicorn main:app --reload
+cd services/agent-log-api
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-dev.txt
+uvicorn app.main:app --reload
+```
+
+起動後、ブラウザで `http://127.0.0.1:8000/` を開く。
+ローカル確認用ダッシュボードでは、APIのヘルス状態、受信済みログ、サンプルログ送信フォームを確認できる。
+ログはメモリにのみ保存されるため、APIを再起動すると消える。
+
+ポート8000がすでに使われている場合は、既存の開発サーバーを停止してから起動する。
+使用中のプロセスは次のコマンドで確認できる。
+
+```sh
+lsof -nP -iTCP:8000 -sTCP:LISTEN
 ```
 
 ```sh

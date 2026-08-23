@@ -14,6 +14,18 @@ def reset_logs():
 client = TestClient(app)
 
 
+def test_dashboard_and_static_assets_are_served():
+    dashboard_response = client.get("/")
+    script_response = client.get("/static/dashboard.js")
+    stylesheet_response = client.get("/static/styles.css")
+
+    assert dashboard_response.status_code == 200
+    assert "Agent Log API | ローカル確認" in dashboard_response.text
+    assert 'id="log-form"' in dashboard_response.text
+    assert script_response.status_code == 200
+    assert stylesheet_response.status_code == 200
+
+
 def test_health():
     response = client.get("/health")
 
