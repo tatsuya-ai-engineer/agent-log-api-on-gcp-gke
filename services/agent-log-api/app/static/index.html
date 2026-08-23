@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agent Log API | ローカル確認</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/dashboard.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">LOCAL DEVELOPMENT</p>
+          <h1>Agent Log API</h1>
+          <p class="subtitle">受信したAgent操作ログを、ローカルで確認します。</p>
+        </div>
+        <button id="refresh-all" class="button button-secondary" type="button">最新の状態に更新</button>
+      </header>
+
+      <p class="notice" role="note">ログはメモリにのみ保存されます。APIを再起動すると一覧から消えます。</p>
+
+      <section class="health-card" aria-labelledby="health-heading">
+        <div>
+          <p class="section-label">API STATUS</p>
+          <h2 id="health-heading">ヘルスチェック</h2>
+        </div>
+        <output id="health-status" class="status status-pending" aria-live="polite">確認中</output>
+      </section>
+
+      <section class="dashboard-grid">
+        <section class="panel log-panel" aria-labelledby="logs-heading">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">RECEIVED LOGS</p>
+              <h2 id="logs-heading">受信済みログ</h2>
+            </div>
+            <span id="log-count" class="count">0 件</span>
+          </div>
+          <p id="logs-message" class="empty-message" aria-live="polite">ログを読み込んでいます。</p>
+          <div class="table-scroll">
+            <table id="logs-table" hidden>
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Agent</th>
+                  <th scope="col">ユーザー</th>
+                  <th scope="col">ツール</th>
+                  <th scope="col">アクション</th>
+                  <th scope="col">結果</th>
+                </tr>
+              </thead>
+              <tbody id="logs-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel form-panel" aria-labelledby="send-heading">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">SAMPLE EVENT</p>
+              <h2 id="send-heading">サンプルログを送信</h2>
+            </div>
+          </div>
+          <form id="log-form">
+            <label>
+              Agent ID
+              <input name="agent_id" value="agent-001" required />
+            </label>
+            <label>
+              ユーザー ID <span class="optional">任意</span>
+              <input name="actor_user_id" value="user-001@example.com" />
+            </label>
+            <label>
+              ツール名
+              <input name="tool_name" value="gmail.search" required />
+            </label>
+            <label>
+              アクション
+              <input name="action" value="read_email" required />
+            </label>
+            <label>
+              結果
+              <select name="status">
+                <option value="success">success</option>
+                <option value="failure">failure</option>
+              </select>
+            </label>
+            <button class="button button-primary" type="submit">ログを送信</button>
+            <p id="form-message" class="form-message" aria-live="polite"></p>
+          </form>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

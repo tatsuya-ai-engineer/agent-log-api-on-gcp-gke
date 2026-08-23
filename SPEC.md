@@ -56,6 +56,7 @@ AI Agentの操作ログをAPIで受け取り、Kubernetes上で安全に動か�
 | MVP-001 | ヘルスチェック | `GET /health` を返す | Must | `{"status":"ok"}` が返る |
 | MVP-002 | ログ受信 | `POST /logs` でAgentログを受け取る | Must | JSONを受信し、アプリログに出力できる |
 | MVP-003 | ログ一覧 | `GET /logs` で受信済みログを見る | Must | メモリ上のログ一覧を返せる |
+| MVP-003a | ローカル確認用UI | API同梱の画面で状態と受信ログを確認する | Must | `/` で状態とログ一覧を表示できる |
 | MVP-004 | Kubernetesデプロイ | APIをGKEまたはローカルK8sに載せる | Must | Deployment / Service が動く |
 | MVP-005 | ConfigMap | `APP_ENV`, `LOG_LEVEL` を外出しする | Should | `/health` に環境名が含まれる |
 | MVP-006 | Secret | ダミーAPIキーをSecretから渡す | Should | APIキー存在チェックができる |
@@ -122,6 +123,7 @@ AI Agentの操作ログをAPIで受け取り、Kubernetes上で安全に動か�
 | API-001 | GET | `/health` | 死活監視 | 不要 | Must |
 | API-002 | POST | `/logs` | Agentログ受信 | MVPでは不要 / 後でAPI Key | Must |
 | API-003 | GET | `/logs` | 受信ログ一覧 | MVPでは不要 / 後でAPI Key | Must |
+| API-003a | GET | `/` | ローカル確認用UI | MVPでは不要 | Must |
 | API-004 | GET | `/env` | ConfigMap確認 | 不要 | Should |
 | API-005 | GET | `/version` | アプリバージョン確認 | 不要 | Should |
 | API-006 | GET | `/agents/{agent_id}/timeline` | Agent別タイムライン | API Key / OIDC | Later |
@@ -392,6 +394,7 @@ agent-log-api-on-gcp-gke/
 | DEV-003 | FastAPI雛形作成 | App | 1 | Must | `/health` が返る |
 | DEV-004 | `/logs` POST実装 | App | 1 | Must | JSONを受信できる |
 | DEV-005 | `/logs` GET実装 | App | 1 | Must | 保存済みログを返せる |
+| DEV-021 | ローカル確認用ダッシュボード | App | 1 | Must | `/` で状態と受信ログを確認できる |
 | DEV-006 | Dockerfile作成 | App | 1 | Must | docker build成功 |
 | DEV-007 | Kubernetes Deployment作成 | K8s | 1 | Must | Podが起動する |
 | DEV-008 | Kubernetes Service作成 | K8s | 1 | Must | port-forwardでアクセス可能 |
@@ -587,4 +590,3 @@ agent-log-api-on-gcp-gke/
 | 6 | K8s manifest作成 | Deployment / Serviceがある |
 | 7 | ローカルK8sで動作確認 | port-forwardでcurlできる |
 | 8 | GCP構築メモ作成 | `deploy/gcloud-commands.md` がある |
-

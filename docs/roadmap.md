@@ -20,7 +20,7 @@
 
 | Milestone | 目的 | 完了条件 |
 |---|---|---|
-| `v0.1.0` | ローカルAPI完成 | `/health`、`POST /logs`、`GET /logs` がローカルで動く |
+| `v0.1.0` | ローカルAPI完成 | `/` の確認用UIと`/health`、`POST /logs`、`GET /logs` がローカルで動く |
 | `v0.2.0` | Docker化 | image buildとcontainer起動でAPIを確認できる |
 | `v0.3.0` | ローカルKubernetes対応 | Deployment、Service、port-forwardでAPIを確認できる |
 | `v0.4.0` | GKE Autopilot対応 | GKE上でAPIが動き、Cloud Loggingでログを確認できる |
@@ -32,7 +32,7 @@
 
 | Epic | 目的 | 主な成果物 | 状態 |
 |---|---|---|---|
-| EPIC-001 Local API MVP | ローカルでAgentログAPIを動かす | FastAPI、基本テスト、README更新 | Ready候補 |
+| EPIC-001 Local API MVP | ローカルでAgentログAPIと確認用UIを動かす | FastAPI、基本テスト、ローカル確認用UI、README更新 | In Progress |
 | EPIC-002 Containerization | APIをDockerで起動する | Dockerfile、docker build手順 | Backlog |
 | EPIC-003 Local Kubernetes | ローカルKubernetesで起動する | Deployment、Service、port-forward手順 | Backlog |
 | EPIC-004 GKE Autopilot Deploy | GKEへデプロイする | Artifact Registry、GKE、Cloud Logging確認 | Backlog |
@@ -40,11 +40,10 @@
 
 ## 次に作るIssue
 
-`v0.1.0` では、次のIssueを作る。
+`v0.1.0` では、次のIssueを扱う。
 
-- DEV-004 `POST /logs` 実装。
-- DEV-005 `GET /logs` 実装。
-- TEST-001 API基本テスト追加。
+- UI-001 ローカル確認用ダッシュボード実装。
+- CI-001 APIテストをGitHub Actionsで自動実行。
 - DOC-001 READMEにローカルAPI起動手順を書く。
 
 ## 依存関係

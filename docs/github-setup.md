@@ -57,14 +57,15 @@ Body:
 ```md
 ## 目的
 
-ローカル環境でAgentログAPIを動かす。
+ローカル環境でAgentログAPIと確認用UIを動かす。
 
 ## 範囲
 
 - `GET /health`
 - `POST /logs`
 - `GET /logs`
-- API基本テスト
+- `GET /` のローカル確認用UI
+- API基本テストとUIテスト
 - READMEの起動手順
 
 ## 対象外
@@ -74,6 +75,8 @@ Body:
 - GCP
 - API Key認証
 - 永続化
+- 独立したフロントエンドサービス
+- 認証付きの外部公開ダッシュボード
 
 ## 子Issue
 
@@ -82,6 +85,7 @@ Body:
 - [ ] DEV-005 `GET /logs` 実装
 - [ ] TEST-001 API基本テスト追加
 - [ ] DOC-001 READMEにローカルAPI起動手順を書く
+- [ ] UI-001 ローカル確認用ダッシュボード実装
 
 ## 完了条件
 
@@ -89,7 +93,9 @@ Body:
 - [ ] `/health` がHTTP 200を返す
 - [ ] `POST /logs` でログを保存できる
 - [ ] `GET /logs` で保存済みログを確認できる
-- [ ] 基本テストが通る
+- [ ] `GET /` の画面で状態と受信ログを確認できる
+- [ ] 画面から送信したサンプルログが一覧に反映される
+- [ ] APIとUIの基本テストが通る
 
 ## 関連
 
@@ -106,3 +112,4 @@ Body:
 | DEV-005 `GET /logs` 実装 | `type:feature`, `priority:must`, `phase:1-mvp` | `v0.1.0 Local API` |
 | TEST-001 API基本テスト追加 | `type:test`, `priority:should`, `phase:1-mvp` | `v0.1.0 Local API` |
 | DOC-001 READMEにローカルAPI起動手順を書く | `type:docs`, `priority:should`, `phase:1-mvp` | `v0.1.0 Local API` |
+| UI-001 ローカル確認用ダッシュボード実装 | `type:feature`, `priority:must`, `phase:1-mvp` | `v0.1.0 Local API` |
