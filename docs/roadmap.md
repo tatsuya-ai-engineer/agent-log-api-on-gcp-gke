@@ -11,7 +11,7 @@
 | Remote | `origin` 設定済み |
 | Product Spec | `SPEC.md` 配置済み |
 | README | 初版作成済み |
-| App | `GET /health`、`POST /logs`、`GET /logs` 実装済み |
+| App | `GET /` のローカル確認用UI、`GET /health`、`POST /logs`、`GET /logs` 実装済み |
 | Docker | 未実装 |
 | Kubernetes | 未実装 |
 | GCP | 未実装 |
@@ -42,7 +42,6 @@
 
 `v0.1.0` では、次のIssueを扱う。
 
-- UI-001 ローカル確認用ダッシュボード実装。
 - CI-001 APIテストをGitHub Actionsで自動実行。
 - DOC-001 READMEにローカルAPI起動手順を書く。
 

@@ -9,8 +9,8 @@
 |---|---|
 | Repository | GitHub反映済み |
 | Local branch | `main` が `origin/main` を追跡 |
-| App | `GET /health`、`POST /logs`、`GET /logs` 実装済み。ローカル確認用UIを追加予定 |
-| Tests | API基本テスト4件追加済み、PR #14はmerge済み |
+| App | `GET /` のローカル確認用UI、`GET /health`、`POST /logs`、`GET /logs` 実装済み |
+| Tests | APIとUIの基本テスト5件追加済み、PR #14はmerge済み |
 | Docker | 未実装 |
 | Kubernetes | 未実装 |
 | GCP | 未実装 |
@@ -38,15 +38,13 @@
 次の開発は `v0.1.0 Local API` から始める。
 次に扱うIssue候補は次の通りである。
 
-- UI-001 API同梱のローカル確認用ダッシュボードを実装する。
 - CI-001 APIテストをGitHub Actionsで自動実行。Issue #15から着手する。
 - DOC-001 READMEにローカルAPI起動手順を書く。
 
 `services/agent-log-api/` 配下にFastAPIアプリを置いている。
 `GET /`、`GET /health`、`POST /logs`、`GET /logs` の受け入れ条件は `specs/v0.1.0-local-api.md` に従う。
 
-次のセッションでは、最初にUI-001とIssue #15の状態を確認する。
-UI-001は、既存APIを利用する同梱UIに限定し、認証・検索・永続化・独立フロントエンドサービスを追加しない。
+次のセッションでは、最初にIssue #15の状態を確認する。
 CI-001については、既存Specと開発運用文書への影響を確認し、作業範囲のユーザー承認を得てからCI実装へ進む。
 
 ## 開発の進め方
