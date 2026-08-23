@@ -43,7 +43,6 @@
 `v0.1.0` では、次のIssueを扱う。
 
 - CI-001 APIテストをGitHub Actionsで自動実行。
-- DOC-001 READMEにローカルAPI起動手順を書く。
 
 ## 依存関係
 
