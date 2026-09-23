@@ -11,7 +11,7 @@
 | Local branch | `main` が `origin/main` を追跡 |
 | App | `GET /` のローカル確認用UI、`GET /health`、`POST /logs`、`GET /logs` 実装済み |
 | Tests | APIとUIの基本テスト5件追加済み。GitHub Actionsの`API tests`を`main`の必須チェックに設定済み |
-| Docker | 未実装 |
+| Docker | 未実装（実行SpecはIssue #25で作成中） |
 | Kubernetes | 未実装 |
 | GCP | 未実装 |
 | Current milestone | `v0.2.0 Docker` |
@@ -36,13 +36,13 @@
 ## 次の作業
 
 `v0.1.0 Local API` と `EPIC-001 Local API MVP` は完了した。
-次の開発は `v0.2.0 Docker` の `EPIC-002 Containerization`（Issue #23）から始める。
-最初にDocker実行のSpecを作成し、ユーザー承認後に実装Issueへ分解する。
+次の作業は、`v0.2.0 Docker` の `SPEC-002: Docker実行仕様を確定する`（Issue #25）である。
+Specのユーザー承認後に、`EPIC-002 Containerization`（Issue #23）のDocker実装Issueを1件作成する。
 
 `services/agent-log-api/` 配下にFastAPIアプリを置いている。
 `GET /`、`GET /health`、`POST /logs`、`GET /logs` の受け入れ条件は `specs/v0.1.0-local-api.md` に従う。
 
-次のセッションでは、最初にIssue #23の状態と`v0.2.0 Docker`のSpecを確認する。
+次のセッションでは、最初にIssue #25と`specs/v0.2.0-docker.md`を確認する。
 
 ## 開発の進め方
 
