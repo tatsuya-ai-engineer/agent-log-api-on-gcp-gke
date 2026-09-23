@@ -40,9 +40,9 @@
 
 ## 次に作るIssue
 
-`v0.2.0` では、まずDocker実行のSpecを作成し、ユーザー承認後に実装Issueへ分解する。
+`v0.2.0` では、承認・merge済みのDocker実行Specに従って、Dockerfile、`.dockerignore`、ローカル起動手順を実装する。
 
-- SPEC-002 Docker実行仕様を確定する（Issue #25）
+- DOCKER-001 agent-log-apiをDockerでローカル実行する（Issue #27）
 
 ## 依存関係
 
