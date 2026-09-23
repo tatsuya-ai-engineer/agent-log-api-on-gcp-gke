@@ -25,7 +25,7 @@
 2. `docs/session-handoff.md`
 3. `docs/implementation-index.md`
 4. `docs/roadmap.md`
-5. `specs/v0.1.0-local-api.md`
+5. `specs/v0.3.0-local-kubernetes.md`
 6. `services/agent-log-api/SPEC.md`
 7. `docs/development-workflow.md`
 8. `docs/branch-strategy.md`
@@ -35,16 +35,18 @@
 
 ## 次の作業
 
-`v0.1.0 Local API`、`v0.2.0 Docker`、`EPIC-001 Local API MVP`、`EPIC-002 Containerization` は完了した。
-次の開発は、`v0.3.0 Local Kubernetes` の `EPIC-003 Local Kubernetes` である。
-実装を始める前に、Deployment、Service、port-forwardの範囲と受け入れ条件をSpecへ記載し、ユーザー承認を得る。
+`v0.1.0 Local API`、`v0.2.0 Docker`、`EPIC-001 Local API MVP`、`EPIC-002 Containerization`、`SPEC-003` は完了した。
+次の開発は、`v0.3.0 Local Kubernetes` の `EPIC-003 Local Kubernetes` にある [#34 K8S-001](https://github.com/tatsuya-ai-engineer/agent-log-api-on-gcp-gke/issues/34) である。
+`specs/v0.3.0-local-kubernetes.md` はユーザー承認済みである。
 
-`v0.3.0 Local Kubernetes`の作業Issueは、Specの承認後に作成する。
+#34では、DeploymentとServiceのmanifest、READMEの手順、Docker Desktop Kubernetesでの適用とport-forward経由のヘルスチェックを実装する。
+
+ConfigMap、Secret、Probe、GKEはこのIssueの対象外である。
 
 `services/agent-log-api/` 配下にFastAPIアプリを置いている。
 `GET /`、`GET /health`、`POST /logs`、`GET /logs` の受け入れ条件は `specs/v0.1.0-local-api.md` に従う。
 
-次のセッションでは、最初に`docs/roadmap.md`、`SPEC.md`、`services/agent-log-api/SPEC.md`を確認し、ローカルKubernetesのSpec案を作成する。
+次のセッションでは、最初に`specs/v0.3.0-local-kubernetes.md`と`services/agent-log-api/SPEC.md`を確認し、#34の実装を始める。
 
 ## 開発の進め方
 

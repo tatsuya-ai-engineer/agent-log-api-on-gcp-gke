@@ -38,11 +38,11 @@
 | EPIC-004 GKE Autopilot Deploy | GKEへデプロイする | Artifact Registry、GKE、Cloud Logging確認 | Backlog |
 | EPIC-005 Ops Readiness | 運用の芽を入れる | ConfigMap、Secret、Probe、Runbook | Backlog |
 
-## 次に作るIssue
+## 次のIssue
 
-`v0.3.0` では、まずローカルKubernetes実行のSpecを作成し、ユーザー承認後に実装Issueへ分解する。
+`v0.3.0` のローカルKubernetes実行Specは、[#32](https://github.com/tatsuya-ai-engineer/agent-log-api-on-gcp-gke/issues/32) で確定した。
 
-- EPIC-003 Local Kubernetes
+次は、[#34 K8S-001](https://github.com/tatsuya-ai-engineer/agent-log-api-on-gcp-gke/issues/34) でDeploymentとServiceのmanifest、READMEの手順、ローカル動作確認を実装する。
 
 ## 依存関係
 
