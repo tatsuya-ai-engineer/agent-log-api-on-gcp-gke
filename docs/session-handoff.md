@@ -41,6 +41,8 @@
 
 #34では、DeploymentとServiceのmanifest、READMEの手順、Docker Desktop Kubernetesでの適用とport-forward経由のヘルスチェックを実装する。
 
+実装前に、Deployment、Service、Pod、port-forwardの役割と実装手順を、初心者にも理解できる形で説明する。
+
 ConfigMap、Secret、Probe、GKEはこのIssueの対象外である。
 
 `services/agent-log-api/` 配下にFastAPIアプリを置いている。
