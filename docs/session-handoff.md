@@ -11,11 +11,11 @@
 | Local branch | `main` が `origin/main` を追跡 |
 | App | `GET /` のローカル確認用UI、`GET /health`、`POST /logs`、`GET /logs` 実装済み |
 | Tests | APIとUIの基本テスト5件追加済み。GitHub Actionsの`API tests`を`main`の必須チェックに設定済み |
-| Docker | 未実装（実行SpecはIssue #25で承認・merge済み） |
+| Docker | Dockerfile、`.dockerignore`、ローカルbuild・起動・`GET /health`確認、README手順を実装済み |
 | Kubernetes | 未実装 |
 | GCP | 未実装 |
-| Current milestone | `v0.2.0 Docker` |
-| Current epic | `EPIC-002 Containerization` |
+| Current milestone | `v0.3.0 Local Kubernetes` |
+| Current epic | `EPIC-003 Local Kubernetes` |
 
 ## 最初に読むファイル
 
@@ -35,14 +35,16 @@
 
 ## 次の作業
 
-`v0.1.0 Local API` と `EPIC-001 Local API MVP` は完了した。
-次の作業は、`v0.2.0 Docker` の `DOCKER-001: agent-log-apiをDockerでローカル実行する`（Issue #27）である。
-承認・merge済みの`specs/v0.2.0-docker.md`に従い、Dockerfile、`.dockerignore`、READMEの手順を実装する。
+`v0.1.0 Local API`、`v0.2.0 Docker`、`EPIC-001 Local API MVP`、`EPIC-002 Containerization` は完了した。
+次の開発は、`v0.3.0 Local Kubernetes` の `EPIC-003 Local Kubernetes` である。
+実装を始める前に、Deployment、Service、port-forwardの範囲と受け入れ条件をSpecへ記載し、ユーザー承認を得る。
+
+`v0.3.0 Local Kubernetes`の作業Issueは、Specの承認後に作成する。
 
 `services/agent-log-api/` 配下にFastAPIアプリを置いている。
 `GET /`、`GET /health`、`POST /logs`、`GET /logs` の受け入れ条件は `specs/v0.1.0-local-api.md` に従う。
 
-次のセッションでは、最初にIssue #27と`specs/v0.2.0-docker.md`を確認し、Dockerデーモンが起動していることを確認する。
+次のセッションでは、最初に`docs/roadmap.md`、`SPEC.md`、`services/agent-log-api/SPEC.md`を確認し、ローカルKubernetesのSpec案を作成する。
 
 ## 開発の進め方
 

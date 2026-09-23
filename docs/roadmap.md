@@ -12,7 +12,7 @@
 | Product Spec | `SPEC.md` 配置済み |
 | README | 初版作成済み |
 | App | `GET /` のローカル確認用UI、`GET /health`、`POST /logs`、`GET /logs` 実装済み |
-| Docker | 未実装 |
+| Docker | Dockerfile、`.dockerignore`、ローカルbuild・起動・`GET /health`確認、README手順を実装済み |
 | Kubernetes | 未実装 |
 | GCP | 未実装 |
 
@@ -21,7 +21,7 @@
 | Milestone | 目的 | 完了条件 | 状態 |
 |---|---|---|---|
 | `v0.1.0` | ローカルAPI完成 | `/` の確認用UIと`/health`、`POST /logs`、`GET /logs` がローカルで動き、GitHub ActionsでAPIテストが成功する | Done |
-| `v0.2.0` | Docker化 | image buildとcontainer起動でAPIを確認できる | Backlog |
+| `v0.2.0` | Docker化 | image buildとcontainer起動でAPIを確認できる | Done |
 | `v0.3.0` | ローカルKubernetes対応 | Deployment、Service、port-forwardでAPIを確認できる | Backlog |
 | `v0.4.0` | GKE Autopilot対応 | GKE上でAPIが動き、Cloud Loggingでログを確認できる | Backlog |
 | `v0.5.0` | 運用初期対応 | ConfigMap、Secret、Probe、Runbookが揃う | Backlog |
@@ -33,16 +33,16 @@
 | Epic | 目的 | 主な成果物 | 状態 |
 |---|---|---|---|
 | EPIC-001 Local API MVP | ローカルでAgentログAPIと確認用UIを動かす | FastAPI、基本テスト、ローカル確認用UI、README更新、GitHub Actions | Done |
-| EPIC-002 Containerization | APIをDockerで起動する | Dockerfile、docker build手順 | Backlog |
+| EPIC-002 Containerization | APIをDockerで起動する | Dockerfile、`.dockerignore`、docker buildとcontainer起動、README手順 | Done |
 | EPIC-003 Local Kubernetes | ローカルKubernetesで起動する | Deployment、Service、port-forward手順 | Backlog |
 | EPIC-004 GKE Autopilot Deploy | GKEへデプロイする | Artifact Registry、GKE、Cloud Logging確認 | Backlog |
 | EPIC-005 Ops Readiness | 運用の芽を入れる | ConfigMap、Secret、Probe、Runbook | Backlog |
 
 ## 次に作るIssue
 
-`v0.2.0` では、承認・merge済みのDocker実行Specに従って、Dockerfile、`.dockerignore`、ローカル起動手順を実装する。
+`v0.3.0` では、まずローカルKubernetes実行のSpecを作成し、ユーザー承認後に実装Issueへ分解する。
 
-- DOCKER-001 agent-log-apiをDockerでローカル実行する（Issue #27）
+- EPIC-003 Local Kubernetes
 
 ## 依存関係
 
