@@ -42,7 +42,7 @@
 
 `v0.2.0` では、まずDocker実行のSpecを作成し、ユーザー承認後に実装Issueへ分解する。
 
-- EPIC-002 Containerization（Issue #23）
+- SPEC-002 Docker実行仕様を確定する（Issue #25）
 
 ## 依存関係
 
