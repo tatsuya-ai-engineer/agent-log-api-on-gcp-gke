@@ -38,7 +38,9 @@
 | 対象 | ファイル | 位置づけ |
 |---|---|---|
 | 全体仕様 | `SPEC.md` | プロダクト仮説、全体構成、GCP/Kubernetes方針 |
-| 現行Milestone | `specs/v0.1.0-local-api.md` | `v0.1.0 Local API` の範囲と受け入れ条件 |
+| ローカルAPI仕様 | `specs/v0.1.0-local-api.md` | APIの範囲と受け入れ条件 |
+| Docker仕様 | `specs/v0.2.0-docker.md` | Docker実行の範囲と受け入れ条件 |
+| 現行Milestone | `specs/v0.3.0-local-kubernetes.md` | `v0.3.0 Local Kubernetes` の範囲と受け入れ条件 |
 | サービス境界 | `services/README.md` | 将来のマイクロサービス境界 |
 | agent-log-api | `services/agent-log-api/SPEC.md` | `agent-log-api` の責務、API、非責務 |
 
