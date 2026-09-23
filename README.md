@@ -104,6 +104,34 @@ curl -X POST http://localhost:8000/logs \
 curl http://localhost:8000/logs
 ```
 
+## Dockerでの起動
+
+Docker Desktopを起動してから、リポジトリのルートでイメージをbuildする。
+
+```sh
+docker build -t agent-log-api:local services/agent-log-api
+```
+
+次のコマンドでコンテナを起動する。
+
+```sh
+docker run --rm -p 8000:8000 agent-log-api:local
+```
+
+別のターミナルから、ヘルスチェックを確認する。
+
+```sh
+curl -i http://localhost:8000/health
+```
+
+`HTTP/1.1 200 OK`と`{"status":"ok"}`が表示されれば成功する。
+
+コンテナは、起動したターミナルで`Control` + `C`を押して停止する。
+
+`--rm`を指定しているため、停止したコンテナは自動で削除される。
+
+ログはメモリに保存されるため、コンテナを停止すると受信済みログも消える。
+
 ## 開発フェーズ
 
 | Version | 内容 |
